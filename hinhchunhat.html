@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hinhchunhat</title>
+</head>
+<body>
+<canvas id="myCanvas" width="800" height="500" style="border: 10px solid #6334ff"></canvas>
+<script>
+    let Rectangle = function (width, height) {
+        this.width = width;
+        this.height = height;
+        this.getArea = function () {
+            return this.width * this.height;
+        };
+        this.getPerimeter = function () {
+            return 2 * (this.width + this.height);
+        };
+        this.drawRectangle = function () {
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.fillStyle = "#ff851a";
+            ctx.fillRect(300, 180, this.width, this.height);
+        };
+    };
+    let rectangle = new Rectangle(200, 100);
+    rectangle.drawRectangle();
+    rectangle.width = 300;
+    rectangle.height = 150;
+    document.write(rectangle.getArea() + " " + rectangle.getPerimeter());
+</script>
+</body>
+</html>
